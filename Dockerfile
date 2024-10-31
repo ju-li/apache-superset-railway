@@ -2,7 +2,8 @@ FROM apache/superset:latest
 
 USER root
 
-RUN pip install mysqlclient
+# Install PostgreSQL client
+RUN pip install psycopg2
 
 ENV ADMIN_USERNAME $ADMIN_USERNAME
 ENV ADMIN_EMAIL $ADMIN_EMAIL
