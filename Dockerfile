@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install mysqlclient psycopg2
+# RUN pip install mysqlclient psycopg2
+# Probando instalación 
+RUN pip install --no-cache-dir --target=/app/.venv/lib/python3.10/site-packages mysqlclient psycopg2-binary
 
 ENV ADMIN_USERNAME $ADMIN_USERNAME
 ENV ADMIN_EMAIL $ADMIN_EMAIL
